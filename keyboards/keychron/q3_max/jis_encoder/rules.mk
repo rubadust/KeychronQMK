@@ -1,1 +1,1 @@
-# This file intentionally left blank
+DEBOUNCE_TYPE = custom
