@@ -28,6 +28,7 @@ jobs:
 
       - name: Compile
         run: |
+          export SKIP_GIT=yes
           qmk compile -kb ${{ github.event.inputs.keyboard }} -km ${{ github.event.inputs.keymap }}
 
       - name: Upload Artifact
