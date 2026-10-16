@@ -10,7 +10,7 @@ on:
       keymap:
         description: 'Keymap Name'
         required: true
-        default: 'default'
+        default: 'via'
 
 jobs:
   build:
