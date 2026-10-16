@@ -6,7 +6,7 @@ on:
       keyboard:
         description: 'Keyboard Name'
         required: true
-        default: 'keychron/q3_max/jis'
+        default: 'keychron/q3_max/jis_encoder'
       keymap:
         description: 'Keymap Name'
         required: true
@@ -21,9 +21,15 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+
+      - name: Install Dependencies
+        run: |
+          python3 -m pip install -r requirements.txt
+
       - name: Compile
         run: |
           qmk compile -kb ${{ github.event.inputs.keyboard }} -km ${{ github.event.inputs.keymap }}
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
